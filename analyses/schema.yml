@@ -1,0 +1,23 @@
+ersion: 2
+
+analyses:
+
+  - name: data_profiling
+    description: >
+      Initial source-system profiling queries used to understand
+      dataset size, customer counts, product counts, and invoice counts.
+
+  - name: data_quality_assessment
+    description: >
+      Queries used to identify malformed records, calculate data quality
+      impact, and assess source-system reliability.
+
+  - name: business_rule_validation
+    description: >
+      Validation queries used to identify customer returns, inventory
+      adjustments, and transaction classification rules.
+
+  - name: dbt_validation_investigations
+    description: >
+      Investigation queries used to diagnose failing dbt tests and
+      validate dimensional model refinements.

@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw
+    database: e -commence dataset
+    schema: dbo
+
+    tables:
+      - name: e_commence_data
+        description: Raw ecommerce transaction data loaded from the source system.
+
+models:
+  - name: stg_ecommerce
+    description: Cleaned ecommerce transaction data prepared for analytics consumption.
+
+    columns:
+      - name: invoice_no
+        description: Invoice identifier.
+
+      - name: stock_code
+        description: Product stock code.
+
+      - name: quantity
+        description: Transaction quantity.
+
+      - name: unit_price
+        description: Unit price of the product.
+
+      - name: sales_amount
+        description: Quantity multiplied by unit price.
+
+      - name: transaction_type
+        description: Sale, Customer Return, or Inventory Adjustment.
+
+  - name: quarantine_ecommerce
+    description: Records failing data quality validation and excluded from downstream analytics models.
