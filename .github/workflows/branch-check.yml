@@ -13,6 +13,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Validate Repository
-        run: |
-          echo "Pull Request validation successful."
+      - name: Validate README exists
+        run: test -f README.md
+
+      - name: Validate dbt project exists
+        run: test -f dbt_project.yml
+
+      - name: Validate models folder exists
+        run: test -d models
+
+      - name: Validate documentation folder exists
+        run: test -d documentation
+
+      - name: Success
+        run: echo "Repository validation successful."
